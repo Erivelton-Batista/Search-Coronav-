@@ -48,6 +48,22 @@ function clean() {
 
 // Bring third party dependencies from node_modules into vendor directory
 function modules() {
+  // Bootstrap JS
+  var bootstrapJS = gulp.src('./node_modules/bootstrap/dist/js/*')
+    .pipe(gulp.dest('../bootstrap/js'));
+  // Bootstrap SCSS
+  var bootstrapSCSS = gulp.src('./node_modules/bootstrap/scss/**/*')
+    .pipe(gulp.dest('../bootstrap/scss'));
+  // ChartJS
+  var chartJS = gulp.src('./node_modules/chart.js/dist/*.js')
+    .pipe(gulp.dest('../chart.js'));
+  // dataTables
+  var dataTables = gulp.src([
+      './node_modules/datatables.net/js/*.js',
+      './node_modules/datatables.net-bs4/js/*.js',
+      './node_modules/datatables.net-bs4/css/*.css'
+    ])
+    .pipe(gulp.dest('../datatables'));
   // Bootstrap
   var bootstrap = gulp.src('./node_modules/bootstrap/dist/**/*')
     .pipe(gulp.dest('../bootstrap'));
@@ -96,6 +112,24 @@ function css() {
     }))
     .pipe(cleanCSS())
     .pipe(gulp.dest("./css"))
+    .pipe(browsersync.stream());
+}
+
+// JS task
+function js() {
+  return gulp
+    .src([
+      './js/*.js',
+      '!./js/*.min.js',
+    ])
+    .pipe(uglify())
+    .pipe(header(banner, {
+      pkg: pkg
+    }))
+    .pipe(rename({
+      suffix: '.min'
+    }))
+    .pipe(gulp.dest('./js'))
     .pipe(browsersync.stream());
 }
 
