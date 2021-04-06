@@ -1,0 +1,39 @@
+h11{
+ font-size: 16px;
+ color: red;
+}
+
+#Form-pp{
+
+    background-color: rgba(255, 255, 255, 0.9);
+	border-radius: 20px;
+    margin-top: 10%;
+    margin-bottom: 10%;
+	width: 100;
+	height: 100%;
+	padding: 3%;
+	box-shadow: 7px 7px 7px grey;
+}
+
+label{
+    font-size: 24px;;
+}
+
+footer{
+height: 30%;
+}
+
+#bodi{
+    background-color: #4e73df;
+
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 700;
+}

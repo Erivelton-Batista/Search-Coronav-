@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device=width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="../css/Cadastro_styles.css">
+	<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/estilo.css">
+	<title>Pesquisa</title>
+	<!--bota icone no Title-->
+    <link rel="icon" type="image/jpg" href="../img/icone.png">
+	<!--pra usar os icones-->
+	<script src="https://kit.fontawesome.com/fd2fcc4b4d.js" crossorigin="anonymous"></script>
+
+	<link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+	<script src="../jquery/jquery.slim.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+
+
+</head>
+
+<body  id="bodi">
+
+  <div id="Form-principal">
+
+		
+	<form class="form-horizontal col-md-8 offset-md-2" action="../Model/Pass_Cadastro.php" method="POST" id="Form-pp">
+
+	  <fieldset>
+		
+		<h1 class="col-md-auto mt-3 offset-4">Informações Pessoais</h1>
+
+	  <!--Text input nome-->
+		<div class="form-group">
+
+  			<label class="col-md-auto mt-5" for="Nome">Nome <h11>*</h11></label>  
+  		  <div class="col-md-auto mt-2">
+  			<input id="Nome" name="Nome" placeholder="Digite seu Nome Completo" class="form-control input-md" required="" type="text">
+  		  </div>
+
+		</div>
+	  
+	  <!--Text input CPF, Data de Nascimento e sexo-->
+		<div class="form-group" id="CPFRGDT">
+
+  			<label class="col-md-2 mt-4 " for="CPF">CPF <h11>*</h11></label>  
+  		  <div class="col-md-5 mt-2">
+  			<input id="CPF" name="CPF" placeholder="Ex: 000.000.000-00" class="form-control input-md" required="" type="text" >
+  		  </div>
+
+  		  	<label class="col-md-auto mt-4" for="data">Data de Nascimento <h11>*</h11></label> 
+  		  <div class="col-md-3">
+  			<input id="data" name="Nascimento" placeholder="DD/MM/AAAA" class="form-control input-md" required="" type="date" maxlength="10" OnKeyPress="formatar('##/##/####', this)" onBlur="showhide()">
+  		  </div>
+
+			<div>
+				<label class="col-md-2 mt-4" for="Sexo">Sexo <h11>*</h11></label>
+
+			  <div class="form-group"><label class="radio ml-3"><input type="radio" name="Sexo">  Masculino</label></div>
+			  <div class="form-group"><label class="radio ml-3"><input type="radio" name="Sexo">  Feminino</label></div>
+			</div>
+
+		</div>
+
+		<!--Text input Endereço Cidade-->
+		<div class="form-group ">
+
+			<label class="col-md-2 mt-4" for="Cidade">Cidade <h11>*</h11></label>  
+  		  <div class="col-md-6">
+  			<input id="Cidade" name="Cidade" placeholder="Caruaru" class="form-control input-md" required="" type="text">
+  		  </div>
+
+  		    <label class="col-md-2 mt-4" for="Estado">Estado <h11>*</h11></label>  
+  		  <div class="col-md-2 ">
+  			 			  
+			  <select class="form-control" id="estado" name="estados-brasil">
+				<option value="null">---</option>
+				<option value="AC">Acre</option>
+				<option value="AL">Alagoas</option>
+				<option value="AP">Amapá</option>
+				<option value="AM">Amazonas</option>
+				<option value="BA">Bahia</option>
+				<option value="CE">Ceará</option>
+				<option value="DF">Distrito Federal</option>
+				<option value="ES">Espírito Santo</option>
+				<option value="GO">Goiás</option>
+				<option value="MA">Maranhão</option>
+				<option value="MT">Mato Grosso</option>
+				<option value="MS">Mato Grosso do Sul</option>
+				<option value="MG">Minas Gerais</option>
+				<option value="PA">Pará</option>
+				<option value="PB">Paraíba</option>
+				<option value="PR">Paraná</option>
+				<option value="PE">Pernambuco</option>
+				<option value="PI">Piauí</option>
+				<option value="RJ">Rio de Janeiro</option>
+				<option value="RN">Rio Grande do Norte</option>
+				<option value="RS">Rio Grande do Sul</option>
+				<option value="RO">Rondônia</option>
+				<option value="RR">Roraima</option>
+				<option value="SC">Santa Catarina</option>
+				<option value="SP">São Paulo</option>
+				<option value="SE">Sergipe</option>
+				<option value="TO">Tocantins</option>
+			</select>
+		</div>
+		<hr>
+
+		<h1 class="col-md-auto mt-3 offset-4">Informações COVID-19</h1>
+
+	  <!--Text input Tipo sanguineo, SUS, sexo-->
+	  	<div class="form-group">
+
+			<label class="col-md-auto mt-4" for="Sangue">Tipo Sanguíneo <h11>*</h11></label>
+			<div class="col-md-8 ">
+ 				<select class="form-control col-md-2" id="Sangue" name="Sangue">
+				<option value="null">---</option>
+  				<option value="A+">A+</option>
+    			<option value="A-">A-</option>
+   				<option value="B+">B+</option>
+    			<option value="B-">B-</option>
+    			<option value="AB+">AB+</option>
+    			<option value="AB-">AB-</option>
+    			<option value="O+">O+</option>
+    			<option value="O-">O-</option>
+			 	</select>
+
+			</div>
+
+		<!--diagnostico do covid 19-->	
+            <label class="col-md-auto mt-4" for="teste-covid">Realizou o diagnóstico Coronavírus (COVID-19)?</label>
+				<div class="col-md-2">
+            		<select class="form-control" id="teste-covid" name="teste-covid">
+						<option value="null">---</option>
+              			<option value="sim">Sim</option>
+               			<option value="nao">Não</option>
+            		</select>
+		   		</div>
+
+		<!--teste do covid 19-->
+			<label class="col-md-auto mt-4" for="teste-realizado">Qual teste de diagnóstico foi realizado?</label>
+				<div class="col-md-auto">
+					<select class="form-control" id="teste-realizado" name="teste-realizado">
+						<option value="null">---</option>
+						<option value="RT-PCR SWAB Nasofaringe">RT-PCR SWAB Nasofaringe</option>
+						<option value="RT-PCR Saliva">RT-PCR Saliva</option>
+						<option value="Antígeno">Antígeno</option>
+						<option value="Outros">Outros</option>
+					</select>
+				</div>
+
+		<!--veze que pegou o covid 19-->
+			<hlabel class="col-md-auto mt-4" for="vezes-covid">Quantas vezes contraiu o vírus(COVID-19)?</label>
+				<div class="col-md-2">
+            		<select class="form-control" id="vezes-covid" name="vezes-covid">
+						<option value="null">---</option>
+              			<option value="1">1</option>
+               			<option value="2">2</option>
+						<option value="Mais de 2">Mais de 2</option>
+            		</select>
+		   		</div>
+
+		<!--sintomas apresentados-->
+            <label class="col-md-auto mt-4">Quais Sintomas foram apresentados?<h11>Marque todos os sintomas apresentados*</h11></label>
+				<div class="form-check col-md-auto">
+                	<input class="form-check-input" type="checkbox" name="Check-sintomas" value="Tosse" id="Tosse"><h5>Tosse </h5>
+                	<input class="form-check-input" type="checkbox" name="Check-sintomas" value="Febre" id="Febre"><h5>Febre<h5>
+                	<input class="form-check-input" type="checkbox" name="Check-sintomas" value="Coriza" id="Coriza"><h5>Coriza</h5>
+                	<input class="form-check-input" type="checkbox" name="Check-sintomas" value="Dor de garganta" id="Dor de garganta"><h5>Dor de garganta</h5>
+                	<input class="form-check-input" type="checkbox" name="Check-sintomas" value="Dificuldade para Respirar" id="Dificuldade para Respirar"><h5>Dificuldade para respirar</h5>
+					<input class="form-check-input" type="checkbox" name="Check-sintomas" value="Perda de olfato (anosmia)" id="Perda de olfato (anosmia)"><h5>Perda de olfato (anosmia)</h5>
+					<input class="form-check-input" type="checkbox" name="Check-sintomas" value="Alteração do paladar (ageusia)" id="Alteração do paladar (ageusia)"><h5>Alteração do paladar (ageusia)</h5>
+					<input class="form-check-input" type="checkbox" name="Check-sintomas" value="Distúrbios gastrintestinais (náuseas/vômitos/diarreia)" id="Distúrbios gastrintestinais (náuseas/vômitos/diarreia)"> <h5> Distúrbios gastrintestinais (náuseas/vômitos/diarreia)</h5>
+					<input class="form-check-input" type="checkbox" name="Check-sintomas" value="Cansaço (astenia)" id="Cansaço (astenia)"><h5>Cansaço (astenia)</h5>
+					<input class="form-check-input" type="checkbox" name="Check-sintomas" value="Diminuição do apetite (hiporexia) e Dispnéia ( falta de ar)" id="Diminuição do apetite (hiporexia) e Dispnéia ( falta de ar)"> <h5>Diminuição do apetite (hiporexia) e Dispnéia ( falta de ar)</h5>
+					
+				</div>
+            
+		<!--vacina-->
+            <label class="col-md-auto mt-4" for="Vacina">Voce foi Vacinado?</label>
+			<div class="col-md-2">
+            	<select class="form-control" name="Vacina" id="Vacina">
+					<option value="null">---</option>
+                	<option value="sim">Sim</option>
+                	<option value="nao">Não</option>
+            	</select>
+			</div>
+
+		<!--qual vacina tomou-->
+			<label class="col-md-auto mt-4" for="Qual-Vacina">Qual vacina você Tomou?</label>
+			<div class="col-md-auto">
+            	<select class="form-control" name="Qual-Vacina" id="Qual-Vacina">
+					<option value="null">---</option>
+                	<option value="CoronaVac">CoronaVac</option>
+                	<option value="Oxford">Oxford</option>
+					<option value="pfizer">Pfizer</option>
+					<option value="Moderna">Moderna</option>
+					<option value="Sputinik V">Sputinik V</option>
+					<option value="Não Tomei Vacina">Não Tomei Vacina</option>
+            	</select>
+			</div>
+
+		<!--contraiu o virus depois da vacina-->
+			<label class="col-md-auto mt-4" for="Vacina">Contraiu o vírus antes ou depois de tomar a vacina?</label>
+			<div class="col-md-2">
+            	<select class="form-control" name="Vacina" id="Vacina">
+					<option value="null">---</option>
+                	<option value="antes">antes</option>
+                	<option value="depois">depois</option>
+            	</select>
+			</div>
+
+		<!--doenças-->
+			<label class="col-md-auto mt-4">Você possui algumas dessas doenças abaixo?<h11>*</h11></label>
+				<div class="form-check col-md-auto">
+                	<input class="form-check-input" type="checkbox" name="Check-doenças" value="Diabete" id="Diabete"><h5>Diabete</h5>
+                	<input class="form-check-input" type="checkbox" name="Check-doenças" value="Hipertensão" id="Hipertensãoe"><h5>Hipertensão<h5>
+                	<input class="form-check-input" type="checkbox" name="Check-doenças" value="Doenças renais" id="Doenças renais"><h5>Doenças renais</h5>
+					<input class="form-check-input" type="checkbox" name="Check-doenças" value="Doenças respiratória" id="Doenças respiratória"><h5>Doenças respiratória</h5>
+					<input class="form-check-input" type="checkbox" name="Check-doenças" value="Doenças cardiovasculares" id="Doenças cardiovasculares"><h5>Doenças cardiovasculares</h5>
+					<input class="form-check-input" type="checkbox" name="Check-doenças" value="Não possuo doenças" id="Não possuo doenças"><h5>Não possuo doenças</h5>
+				</div>
+
+		<!--voce fuma ou bebe?-->
+				<label class="col-md-auto mt-4" for="Fuma-bebe">Você fuma ou bebe alguma bebida alcoólica?</label>
+				<div class="col-md-2">
+					<select class="form-control" name="Fuma-bebe" id="Fuma-bebe">
+						<option value="null">---</option>
+						<option value="sim">Sim</option>
+						<option value="nao">Não</option>
+					</select>
+				</div>
+
+		</div>
+       <!--botao voltar e enviar pesquisa-->
+       		<div class="form-group row">
+
+				<div class="col-md-auto mt-4" id="botao">
+					<a class="btn btn-danger" type="Reset" href="index.html">Cancelar</a>
+					<button id="Cadastrar"name="Cadastrar" class="btn btn-primary" type="Submit" >Enviar Pesquisa!</button>
+	  			</div>
+
+			</div>
+  
+       
+	  </fieldset>
+
+ 	</form>
+
+
+</div>
+	<!-- Footer -->
+	<footer class="footer bg-light">
+		<div class="container">
+		  <div class="row">
+			<div class="col-lg-6 h-100 text-center text-lg-left my-auto">
+			  <ul class="list-inline mb-2">
+				<li class="list-inline-item">
+				  <a href="#">About</a>
+				</li>
+				<li class="list-inline-item">&sdot;</li>
+				<li class="list-inline-item">
+				  <a href="#">Contact</a>
+				</li>
+				<li class="list-inline-item">&sdot;</li>
+				<li class="list-inline-item">
+				  <a href="#">Terms of Use</a>
+				</li>
+				<li class="list-inline-item">&sdot;</li>
+				<li class="list-inline-item">
+				  <a href="#">Privacy Policy</a>
+				</li>
+			  </ul>
+			  <p class="text-muted small mb-4 mb-lg-0">&copy; Search Coronavírus 2021. All Rights Reserved.</p>
+			</div>
+			<div class="col-lg-6 h-100 text-center text-lg-right my-auto">
+			  <ul class="list-inline mb-0">
+				<li class="list-inline-item mr-3">
+				  <a href="https://github.com/Erivelton-Batista/Search-Coronavirus.git">
+					<i class="fab fa-github fa-2x fa-fw"></i>
+				  </a>
+				</li>
+				<li class="list-inline-item">
+				  <a href="login.html">
+					<i class="fas fa-user fa-2x fa-fw"></i>
+				  </a>
+				</li>
+			  </ul>
+			</div>
+		  </div>
+		</div>
+	  </footer>
+
+		<!--Js de mascara-->
+		<script>
+			$(document).ready(function(){
+    			$("#CPF").mask('000.000.000-00');
+
+    			$('#Nascimento').mask('00/00/0000');
+
+    			$('#SUS').mask('000 0000 0000 0000');
+
+    			$('#Telefone').mask('(00)00000-0000');
+
+    			$('#Celular').mask('(00)00000-0000');
+
+    			$('#Estado').mask('AA');
+			});
+
+				$('#Estado').on('keyup', (ev) => {
+					$('#Estado').val($('#Estado').val().toUpperCase());
+				});
+
+		</script>
+
+
+</body>
+
+	
+</html>
