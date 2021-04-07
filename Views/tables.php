@@ -1,3 +1,9 @@
+<?php
+require '../Controller/Crud.php';
+$readSelect = new Crud();
+$readSelect->Tabela();
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -9,17 +15,18 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>ADM - Relatórios</title>
+    <title>ADM - Tabela Pesquisa</title>
     <link rel="icon" type="image/jpg" href="../img/icone.png">
 
-    <!-- Custom fonts for this template-->
+    <!-- Custom fonts for this template -->
     <link href="../fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
-    <!-- Custom styles for this template-->
+    <!-- Custom styles for this template -->
     <link href="../css/sb-admin-2.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this page -->
+    <link href="../datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
 </head>
 
@@ -133,65 +140,64 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Charts</h1>
-                    <p class="mb-4">Chart.js is a third party plugin that is used to generate the charts in this theme.
-                        The charts below have been customized - for further customization options, please visit the <a
-                            target="_blank" href="https://www.chartjs.org/docs/latest/">official Chart.js
-                            documentation</a>.</p>
+                    <h1 class="h3 mb-2 text-gray-800">Tables</h1>
+                    <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below.
+                        For more information about DataTables, please visit the <a target="_blank"
+                            href="https://datatables.net">official DataTables documentation</a>.</p>
 
-                    <!-- Content Row -->
-                    <div class="row">
-
-                        <div class="col-xl-8 col-lg-7">
-
-                            <!-- Area Chart -->
-                            <div class="card shadow mb-4">
-                                <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">Area Chart</h6>
-                                </div>
-                                <div class="card-body">
-                                    <div class="chart-area">
-                                        <canvas id="myAreaChart"></canvas>
-                                    </div>
-                                    <hr>
-                                    Styling for the area chart can be found in the
-                                    <code>/js/demo/chart-area-demo.js</code> file.
-                                </div>
-                            </div>
-
-                            <!-- Bar Chart -->
-                            <div class="card shadow mb-4">
-                                <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">Bar Chart</h6>
-                                </div>
-                                <div class="card-body">
-                                    <div class="chart-bar">
-                                        <canvas id="myBarChart"></canvas>
-                                    </div>
-                                    <hr>
-                                    Styling for the bar chart can be found in the
-                                    <code>/js/demo/chart-bar-demo.js</code> file.
-                                </div>
-                            </div>
-
+                    <!-- DataTales Example -->
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
                         </div>
-
-                        <!-- Donut Chart -->
-                        <div class="col-xl-4 col-lg-5">
-                            <div class="card shadow mb-4">
-                                <!-- Card Header - Dropdown -->
-                                <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">Donut Chart</h6>
-                                </div>
-                                <!-- Card Body -->
-                                <div class="card-body">
-                                    <div class="chart-pie pt-4">
-                                        <canvas id="myPieChart"></canvas>
-                                    </div>
-                                    <hr>
-                                    Styling for the donut chart can be found in the
-                                    <code>/js/demo/chart-pie-demo.js</code> file.
-                                </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>Nome</th>
+                                            <th>CPF</th>
+                                            <th>Data</th>
+                                            <th>Sexo</th>
+                                            <th>Cidade</th>
+                                            <th>Estado</th>
+                                            <th>Sangue</th>
+                                            <th>Teste de Covid</th>
+                                            <th>Teste Realizado</th>
+                                            <th>Vezes de covid</th>
+                                            <th>Sintoma</th>
+                                            <th>Vacina</th>
+                                            <th>Qual Vacina</th>
+                                            <th>Contraiu o Virús</th>
+                                            <th>Doença</th>
+                                            <th>Fuma ou bebe</th>
+                                        </tr>
+                                    </thead>
+                                    
+                                    <tbody>
+                                    <?php foreach ($readSelect->Tabela() as $dado):?> 
+                                        <tr> 
+                                            <td><?php echo $dado['Nome']; ?></td>
+                                            <td><?php echo $dado['CPF']; ?></td>
+                                            <td><?php echo $dado['Data']; ?></td> 
+                                            <td><?php echo $dado['Sexo']; ?></td>
+                                            <td><?php echo $dado['Cidade']; ?></td>
+                                            <td><?php echo $dado['Estado']; ?></td>
+                                            <td><?php echo $dado['Sangue']; ?></td> 
+                                            <td><?php echo $dado['Testecovid']; ?></td>
+                                            <td><?php echo $dado['Testerealizado']; ?></td>
+                                            <td><?php echo $dado['Vezescovid']; ?></td>
+                                            <td><?php echo $dado['Sintoma']; ?></td> 
+                                            <td><?php echo $dado['Vacina']; ?></td>
+                                            <td><?php echo $dado['Qualvacina']; ?></td>
+                                            <td><?php echo $dado['Contraiuvirus']; ?></td>
+                                            <td><?php echo $dado['Doenca']; ?></td> 
+                                            <td><?php echo $dado['Fumabebe']; ?></td>
+                                        </tr> 
+                                     <?php endforeach; ?> 
+                                        
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
@@ -254,12 +260,11 @@
     <script src="../js/sb-admin-2.min.js"></script>
 
     <!-- Page level plugins -->
-    <script src="../chart.js/Chart.min.js"></script>
+    <script src="../datatables/jquery.dataTables.min.js"></script>
+    <script src="../datatables/dataTables.bootstrap4.min.js"></script>
 
     <!-- Page level custom scripts -->
-    <script src="../js/demo/chart-area-demo.js"></script>
-    <script src="../js/demo/chart-pie-demo.js"></script>
-    <script src="../js/demo/chart-bar-demo.js"></script>
+    <script src="../js/demo/datatables-demo.js"></script>
 
 </body>
 
