@@ -6,7 +6,6 @@
 	<meta name="viewport" content="width=device=width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="../css/Cadastro_styles.css">
 	<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
-	<link rel="stylesheet" href="../css/estilo.css">
 	<title>Pesquisa</title>
 	<!--bota icone no Title-->
     <link rel="icon" type="image/jpg" href="../img/icone.png">
@@ -27,15 +26,14 @@
 
 		
 	<form class="form-horizontal col-md-8 offset-md-2" action="../Model/Pass_Cadastro.php" method="POST" id="Form-pp">
-
+		<hr>
+			<h3 class="col-md-auto mt-3 offset-4">Informações Pessoais</h3>
+		<hr>
 	  <fieldset>
-		
-		<h1 class="col-md-auto mt-3 offset-4">Informações Pessoais</h1>
-
 	  <!--Text input nome-->
 		<div class="form-group">
 
-  			<label class="col-md-auto mt-5" for="Nome">Nome <h11>*</h11></label>  
+  			<label class="col-md-auto mt-4" for="Nome">Nome<h11>*</h11></label>  
   		  <div class="col-md-auto mt-2">
   			<input id="Nome" name="Nome" placeholder="Digite seu Nome Completo" class="form-control input-md" required="" type="text">
   		  </div>
@@ -45,20 +43,20 @@
 	  <!--Text input CPF, Data de Nascimento e sexo-->
 		<div class="form-group" id="CPFRGDT">
 
-  			<label class="col-md-2 mt-4 " for="CPF">CPF <h11>*</h11></label>  
+  			<label class="col-md-2 mt-2" for="CPF">CPF <h11>*</h11></label>  
   		  <div class="col-md-5 mt-2">
   			<input id="CPF" name="CPF" placeholder="Ex: 000.000.000-00" class="form-control input-md" required="" type="text" >
   		  </div>
 
 	  <!--Data de Nascimento-->
-  		  	<label class="col-md-auto mt-4" for="Data">Data de Nascimento <h11>*</h11></label> 
+  		  	<label class="col-md-auto mt-3" for="Data">Data de Nascimento <h11>*</h11></label> 
   		  <div class="col-md-3">
   			<input id="Data" name="Data" placeholder="Dia/Mês/Ano" class="form-control input-md" required="" type="text">
   		  </div>
 
 	  <!--Sexo-->
-	  	<label class="col-md-2 mt-4" for="Sexo">Sexo <h11>*</h11></label>
-			<div class="col-md-3">
+	  	<label class="col-md-2 mt-3" for="Sexo">Sexo <h11>*</h11></label>
+			<div class="col-md-2 form-inline">
 			  <div class="form-group ml-1"><label class="radio"><input type="radio" name="Sexo" value="Masculino"> Masculino</label></div>
 			  <div class="form-group ml-1"><label class="radio"><input type="radio" name="Sexo" value="Feminino"> Feminino</label></div>
 			</div>
@@ -68,7 +66,7 @@
 		<!--Cidade-->
 		<div class="form-group ">
 
-			<label class="col-md-2 mt-4" for="Cidade">Cidade <h11>*</h11></label>  
+			<label class="col-md-2 mt-3" for="Cidade">Cidade <h11>*</h11></label>  
   		  <div class="col-md-6">
   			<input id="Cidade" name="Cidade" placeholder="Digite Nome da Cidade" class="form-control input-md" required="" type="text">
   		  </div>
@@ -108,14 +106,18 @@
 				<option value="TO">Tocantins</option>
 			</select>
 		</div>
+
+		<br>
 		<hr>
 
-		<h1 class="col-md-auto mt-3 offset-4">Informações COVID-19</h1>
+		<h3 class="col-md-auto mt-3 offset-4">Informações COVID-19</h1>
+
+		<hr>
 
 	  <!--Text input Tipo sanguineo-->
 	  	<div class="form-group">
 
-			<label class="col-md-auto mt-4" for="Sangue">Tipo Sanguíneo <h11>*</h11></label>
+			<label class="col-md-auto mt-5" for="Sangue">Tipo Sanguíneo <h11>*</h11></label>
 			<div class="col-md-8 ">
  				<select class="form-control col-md-2" id="Sangue" name="Sangue" required=''>
 				<option>---</option>
@@ -243,61 +245,56 @@
        <!--botao voltar e enviar pesquisa-->
        		<div class="form-group row">
 
-				<div class="col-md-auto mt-4 offset-9" id="botao">
+				<div class="col-md-auto mt-3 offset-9" id="botao">
 					<a class="btn btn-danger" type="Reset" href="index.html">Cancelar</a>
 					<button id="Cadastrar"name="Cadastrar" class="btn btn-primary" type="Submit" >Enviar Pesquisa!</button>
 	  			</div>
 
 			</div>
-  
-       
 	  </fieldset>
-
  	</form>
-
-
 </div>
 	<!-- Footer -->
-	<footer class="footer bg-light">
-		<div class="container">
-		  <div class="row">
-			<div class="col-lg-6 h-100 text-center text-lg-left my-auto">
-			  <ul class="list-inline mb-2">
-				<li class="list-inline-item">
-				  <a href="#">About</a>
-				</li>
-				<li class="list-inline-item">&sdot;</li>
-				<li class="list-inline-item">
-				  <a href="#">Contact</a>
-				</li>
-				<li class="list-inline-item">&sdot;</li>
-				<li class="list-inline-item">
-				  <a href="#">Terms of Use</a>
-				</li>
-				<li class="list-inline-item">&sdot;</li>
-				<li class="list-inline-item">
-				  <a href="#">Privacy Policy</a>
-				</li>
-			  </ul>
-			  <p class="text-muted small mb-4 mb-lg-0">&copy; Search Coronavírus 2021. All Rights Reserved.</p>
-			</div>
-			<div class="col-lg-6 h-100 text-center text-lg-right my-auto">
-			  <ul class="list-inline mb-0">
-				<li class="list-inline-item mr-3">
-				  <a href="https://github.com/Erivelton-Batista/Search-Coronavirus.git">
-					<i class="fab fa-github fa-2x fa-fw"></i>
-				  </a>
-				</li>
-				<li class="list-inline-item">
-				  <a href="login.html">
-					<i class="fas fa-user fa-2x fa-fw"></i>
-				  </a>
-				</li>
-			  </ul>
-			</div>
-		  </div>
-		</div>
-	  </footer>
+  <footer class="footer bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
+          <ul class="list-inline mb-2">
+            <li class="list-inline-item">
+              <a href="#">About</a>
+            </li>
+            <li class="list-inline-item">&sdot;</li>
+            <li class="list-inline-item">
+              <a href="#">Contact</a>
+            </li>
+            <li class="list-inline-item">&sdot;</li>
+            <li class="list-inline-item">
+              <a href="#">Terms of Use</a>
+            </li>
+            <li class="list-inline-item">&sdot;</li>
+            <li class="list-inline-item">
+              <a href="#">Privacy Policy</a>
+            </li>
+          </ul>
+          <p class="text-muted small mb-4 mb-lg-0">&copy; Search Coronavírus 2021. All Rights Reserved.</p>
+        </div>
+        <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
+          <ul class="list-inline mb-0">
+            <li class="list-inline-item mr-3">
+              <a href="https://github.com/Erivelton-Batista/Search-Coronavirus.git">
+                <i class="fab fa-github fa-2x fa-fw"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="login.html">
+                <i class="fas fa-user fa-2x fa-fw"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
 
 	  <!-- Logout Modal-->
 	  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
