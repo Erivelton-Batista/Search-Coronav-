@@ -34,7 +34,7 @@ class Login{
 
         if($result->rowCount() > 0){
 
-            echo "<script>alert('Login efetuado com sucesso!');window.location.href='../Views/Dashboard.html'</script>";
+            echo "<script>alert('Login efetuado com sucesso!');window.location.href='../Views/Dashboard.php'</script>";
         }else{
 
             echo "<script>alert('Login ou Senha Invalidos!');window.location.href='../Views/login.html'</script>";
